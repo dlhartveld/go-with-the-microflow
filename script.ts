@@ -23,6 +23,8 @@ client.openWorkingCopy(wcid,
     (model: IModel) => {
         console.log(`Successfully opened model in Online Working Copy: ${wcid}`);
 
+        // Do the work here ...
+
         console.log(`Closing connection to model server ...`);
         model.closeConnection(
             () => {
