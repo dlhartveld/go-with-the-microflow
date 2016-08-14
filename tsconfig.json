@@ -1,0 +1,11 @@
+{
+    "compilerOptions" : {
+        "module" : "commonjs",
+        "target" : "es5"
+    },
+    "files" : [
+        "createwc.ts",
+        "deletewc.ts",
+        "script.ts"
+    ]
+}
