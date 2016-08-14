@@ -5,6 +5,10 @@
   "main": "script.js",
   "scripts": {
     "build": "npm install && typings install && tsc",
+    "create-wc": "node createwc.js",
+    "analysis": "node script.js",
+    "dot": "(cd work && dot -Tpng mfs.gv -o mfs.png)",
+    "full-analysis": "npm run analysis && npm run dot",
     "typings": "typings",
     "tsc": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,7 +16,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mendixmodelsdk": "^2.6.3"
+    "mendixmodelsdk": "^2.6.3",
+    "when": "^3.7.7"
   },
   "devDependencies": {
     "typescript": "^1.8.10",

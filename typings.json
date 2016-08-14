@@ -1,6 +1,8 @@
 {
   "name": "go-with-the-microflow",
-  "dependencies": {},
+  "dependencies": {
+    "when": "registry:npm/when#2.4.0+20160723033700"
+  },
   "globalDependencies": {
     "node": "registry:env/node#6.0.0+20160813135048"
   }

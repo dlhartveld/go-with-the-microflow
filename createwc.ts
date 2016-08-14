@@ -1,13 +1,11 @@
-/// <reference path="typings/index.d.ts" />
-
-import {Model} from "mendixmodelsdk";
+import {Model, IModel} from "mendixmodelsdk";
 
 import fs = require('fs');
 
-//const templateFileName = 'mpks/CompanyExpenses-5.6.0.mpk';
-const templateFileName = 'mpks/EmptyApp-6.7.0.mpk';
-//const templateFileName = 'mpks/EmptyApp-6.7.1.mpk';
-//const templateFileName = 'mpks/sprintr-r8849.mpk';
+const templateFileName = 'mpks/CompanyExpenses-5.6.0.mpk';
+// const templateFileName = 'mpks/EmptyApp-6.7.0.mpk';
+// const templateFileName = 'mpks/EmptyApp-6.7.1.mpk';
+// const templateFileName = 'mpks/sprintr-r8849.mpk';
 
 console.log('Reading credentials from ./work/{username,apikey} ...');
 const username = fs.readFileSync('./work/username').toString();
