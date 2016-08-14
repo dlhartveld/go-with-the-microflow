@@ -28,6 +28,14 @@ client.createWorkingCopy(
     model => {
         console.log(`Created online working copy: ${model.id}`);
         fs.writeFileSync('./work/wcid', model.id);
+
+        console.log(`Closing connection to model server ...`);
+        model.closeConnection(
+            () => {
+                console.log(`Closed connection.`);
+            },
+            handleError
+        )
     },
     handleError
 );
