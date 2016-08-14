@@ -24,3 +24,6 @@ Generate an image from it:
     npm run dot
 
 The resulting image is stored at `./work/mfs.png`.
+
+Re-run the analysis & dot each time you want to analyze another microflow.
+Create a new Online Working Copy for each app that you want to analyze.
