@@ -98,31 +98,23 @@ function recurseIntoMicroflow(mf: microflows.Microflow): MicroflowCall[] {
 }
 
 function recurseIntoMicroflowObject(o: microflows.MicroflowObject): MicroflowCall[] {
-    //console.log(`Looking into object ...`);
-
     if (o instanceof microflows.LoopedActivity) {
-        //console.log(`Actually, it's a loop ...`);
         return recurseIntoMicroflowLoop(o);
     } else if (o instanceof microflows.ActionActivity) {
-        //console.log(`Actually, it's an activity ...`);
         const action = o.action;
+
         if (action instanceof microflows.MicroflowCallAction) {
-            console.log(`It's a microflow call!`);
             const mf = action.model.allMicroflows().filter(mf => mf.qualifiedName === action.microflowCall.microflowQualifiedName)[0];
             return recurseIntoMicroflow(mf.load());
         } else {
-            //console.log(`Uninteresting activity.`);
             return [];
         }
     } else {
-        //console.log(`Nothing interesting here.`);
         return [];
     }
 }
 
 function recurseIntoMicroflowLoop(loop: microflows.LoopedActivity): MicroflowCall[] {
-    //console.log(`Looping through loop ...`);
-
     const calls = loop.objectCollection.objects.map(recurseIntoMicroflowObject);
 
     let result: MicroflowCall[] = [];
